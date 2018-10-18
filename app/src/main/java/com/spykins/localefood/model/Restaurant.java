@@ -1,43 +1,66 @@
 package com.spykins.localefood.model;
 
+import java.util.List;
+
 public class Restaurant {
-    private String name;
-    private double lat;
-    private  double lng;
-    private double distance;
-    private double formattedAddress;
-    private String catgeoryName;
 
-    public Restaurant(String name, double lat, double lng, double distance, double formattedAddress, String catgeoryName) {
-        this.name = name;
-        this.lat = lat;
-        this.lng = lng;
-        this.distance = distance;
-        this.formattedAddress = formattedAddress;
-        this.catgeoryName = catgeoryName;
+    public Response response;
+
+    public class Category {
+        public String id;
+        public String name;
+        public String pluralName;
+        public String shortName;
+        public Icon icon;
+        public Boolean primary;
     }
 
-    public String getName() {
-        return name;
+    public class Icon {
+        public String prefix;
+        public String suffix;
     }
 
-    public double getLat() {
-        return lat;
+    public class LabeledLatLng {
+        public String label;
+        public Double lat;
+        public Double lng;
     }
 
-    public double getLng() {
-        return lng;
+
+    public class Location {
+        public String address;
+        public String crossStreet;
+        public Double lat;
+        public Double lng;
+        public List<LabeledLatLng> labeledLatLngs = null;
+        public Integer distance;
+        public String postalCode;
+        public String cc;
+        public String city;
+        public String state;
+        public String country;
+        public List<String> formattedAddress = null;
+        public String neighborhood;
     }
 
-    public double getDistance() {
-        return distance;
+    public class Response {
+        public List<Venue> venues = null;
     }
 
-    public double getFormattedAddress() {
-        return formattedAddress;
+    public class Venue {
+        public String id;
+        public String name;
+        public Location location;
+        public List<Category> categories = null;
+        public Boolean hasPerk;
+        public VenuePage venuePage;
     }
 
-    public String getCatgeoryName() {
-        return catgeoryName;
+
+    public class VenuePage {
+        public String id;
     }
 }
+
+
+

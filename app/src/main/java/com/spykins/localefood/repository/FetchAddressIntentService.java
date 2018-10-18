@@ -14,7 +14,6 @@ import java.util.List;
 
 public class FetchAddressIntentService extends IntentService {
 
-
     public FetchAddressIntentService() {
         super("FetchAddressIntentService");
     }
