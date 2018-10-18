@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onsubmit(View view) {
+        String address = addressText.getText().toString();
+        if (address != null && !address.isEmpty()) {
+            foodViewModel.searchForRestaurant(address);
+        }
 
     }
 }

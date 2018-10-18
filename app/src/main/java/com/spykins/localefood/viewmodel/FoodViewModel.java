@@ -11,6 +11,7 @@ import java.util.List;
 
 public class FoodViewModel extends AndroidViewModel {
     private MutableLiveData<List<Restaurant>> restaurants = new MutableLiveData<>();
+    private MutableLiveData<String> address = new MutableLiveData<>();
 
     //restaurants.postValue when fetched from api
 
@@ -20,5 +21,8 @@ public class FoodViewModel extends AndroidViewModel {
 
     public MutableLiveData<List<Restaurant>> getRestaurants() {
         return restaurants;
+    }
+
+    public void searchForRestaurant(String address) {
     }
 }
