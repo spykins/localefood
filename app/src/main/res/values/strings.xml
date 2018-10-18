@@ -2,5 +2,8 @@
     <string name="app_name">LocaleFood</string>
     <string name="address_hint">Enter The address of the location</string>
     <string name="address_search_button">Search</string>
+    <string name="address_error">Wrong address</string>
+    <string name="system_error">Can\'t respond to your request</string>
+    <string name="location_off">Location service is turned off</string>
 
 </resources>
