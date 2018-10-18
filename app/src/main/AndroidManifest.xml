@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".repository.FetchAddressIntentService" />
     </application>
+
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="AIzaSyAWjmXPm1qL3x43PeA3Jp8olif4deWq-B0" />
+
 
 </manifest>

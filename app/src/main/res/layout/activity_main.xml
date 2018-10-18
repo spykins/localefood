@@ -6,13 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <EditText
+        android:id="@+id/address_text"
+        android:layout_width="@dimen/address_text_width"
+        android:layout_height="@dimen/address_text_height"
+        android:layout_marginStart="@dimen/default_view_margin"
+        android:layout_marginTop="@dimen/default_view_margin"
+        android:ems="10"
+        android:hint="@string/address_hint"
+        android:inputType="textPostalAddress"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_view_margin"
+        android:text="@string/address_search_button"
+        android:onClick="onsubmit"
+        app:layout_constraintBaseline_toBaselineOf="@+id/address_text"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="@dimen/recycler_view_width"
+        android:layout_height="@dimen/recycler_view_height"
+        android:layout_marginStart="@dimen/default_view_margin"
+        android:layout_marginTop="@dimen/default_view_margin"
+        android:layout_marginEnd="@dimen/default_view_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_text" />
 </android.support.constraint.ConstraintLayout>
