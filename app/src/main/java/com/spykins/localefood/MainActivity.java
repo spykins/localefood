@@ -9,13 +9,17 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.spykins.localefood.model.Restaurant;
+import com.spykins.localefood.model.Venue;
 import com.spykins.localefood.repository.FetchAddressIntentService;
 import com.spykins.localefood.utils.Constants;
+import com.spykins.localefood.view.RestaurantsListAdapter;
 import com.spykins.localefood.viewmodel.FoodViewModel;
 
 import java.util.List;
@@ -23,6 +27,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private FoodViewModel foodViewModel;
     private EditText addressText;
+    private RecyclerView recyclerView;
+    private RestaurantsListAdapter restaurantsListAdapter;
     private BroadcastReceiver broadcastReceiver;
 
     @Override
@@ -30,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addressText = findViewById(R.id.address_text);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        restaurantsListAdapter = new RestaurantsListAdapter();
+        recyclerView.setAdapter(restaurantsListAdapter);
+
+
         foodViewModel = ViewModelProviders.of(this).get(FoodViewModel.class);
         subscribe();
     }
@@ -75,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void subscribe() {
 
-        final Observer<List<Restaurant>> restaurants = new Observer<List<Restaurant>>() {
+        final Observer<List<Venue>> restaurants = new Observer<List<Venue>>() {
             @Override
-            public void onChanged(@Nullable List<Restaurant> restaurants) {
-                //Log.d("RESTAURANR", restaurants.toString());
+            public void onChanged(@Nullable List<Venue> venues) {
+                restaurantsListAdapter.setRestaurant(venues);
             }
         };
 

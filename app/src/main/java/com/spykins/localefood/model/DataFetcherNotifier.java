@@ -1,6 +1,8 @@
 package com.spykins.localefood.model;
 
+import java.util.List;
+
 public interface DataFetcherNotifier {
-    void onSuccess(Restaurant body);
+    void onSuccess(List<Venue> venues);
     void onFailure(String message);
 }

@@ -27,7 +27,7 @@ public class DataFetcher {
                     @Override
                     public void onResponse(Call<Restaurant> call, Response<Restaurant> response) {
                         if (response.isSuccessful()) {
-                            dataFetcherNotifier.onSuccess(response.body());
+                            dataFetcherNotifier.onSuccess(response.body().response.venues);
                         }
                     }
 

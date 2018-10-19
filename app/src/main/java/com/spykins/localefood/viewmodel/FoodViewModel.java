@@ -8,20 +8,16 @@ import android.util.Log;
 
 import com.spykins.localefood.model.DataFetcher;
 import com.spykins.localefood.model.DataFetcherNotifier;
-import com.spykins.localefood.model.Restaurant;
+import com.spykins.localefood.model.Venue;
 import com.spykins.localefood.repository.http.RetrofitProvider;
 
 import java.util.List;
 
 public class FoodViewModel extends AndroidViewModel implements DataFetcherNotifier {
-    private MutableLiveData<List<Restaurant>> restaurants = new MutableLiveData<>();
+    private MutableLiveData<List<Venue>> venues = new MutableLiveData<>();
     private MutableLiveData<String> address = new MutableLiveData<>();
     private DataFetcher dataFetcher;
     private RetrofitProvider retrofitProvider;
-
-
-
-    //restaurants.postValue when fetched from api
 
     public FoodViewModel(@NonNull Application application) {
         super(application);
@@ -29,8 +25,8 @@ public class FoodViewModel extends AndroidViewModel implements DataFetcherNotifi
         dataFetcher = new DataFetcher(this, retrofitProvider);
     }
 
-    public MutableLiveData<List<Restaurant>> getRestaurants() {
-        return restaurants;
+    public MutableLiveData<List<Venue>> getRestaurants() {
+        return venues;
     }
 
     public void searchForRestaurant(double longitude, double latitude) {
@@ -40,8 +36,9 @@ public class FoodViewModel extends AndroidViewModel implements DataFetcherNotifi
 
 
     @Override
-    public void onSuccess(Restaurant body) {
-        Log.d("FOODVIEW_RESTAURANT", body.toString());
+    public void onSuccess(List<Venue> venues) {
+        this.venues.postValue(venues);
+        Log.d("FOODVIEW_RESTAURANT", venues.toString());
     }
 
     @Override

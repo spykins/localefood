@@ -5,4 +5,11 @@
     <dimen name="default_view_margin">8dp</dimen>
     <dimen name="recycler_view_width">368dp</dimen>
     <dimen name="recycler_view_height">437dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">50dp</dimen>
+    <dimen name="restaurant_name">24sp</dimen>
+    <dimen name="restaurant_address_height">29dp</dimen>
+    <dimen name="restaurant_distance_font_size">14sp</dimen>
+    <dimen name="restaurant_address_font_size">16sp</dimen>
+    <dimen name="recycler_text_width">330dp</dimen>
 </resources>
