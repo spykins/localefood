@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="address_text_width">269dp</dimen>
+    <dimen name="address_text_height">48dp</dimen>
+    <dimen name="default_view_margin">8dp</dimen>
+    <dimen name="recycler_view_width">368dp</dimen>
+    <dimen name="recycler_view_height">437dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">50dp</dimen>
+    <dimen name="restaurant_name">24sp</dimen>
+    <dimen name="restaurant_address_height">29dp</dimen>
+    <dimen name="restaurant_distance_font_size">14sp</dimen>
+    <dimen name="restaurant_address_font_size">16sp</dimen>
+    <dimen name="recycler_text_width">330dp</dimen>
+    <dimen name="restaurant_details_width">372dp</dimen>
+    <dimen name="restaurant_details_name_height">89dp</dimen>
+    <dimen name="restaurant_details_address_height">158dp</dimen>
+    <dimen name="restaurant_details_line_space">10dp</dimen>
+    <dimen name="restaurant_address_padding">10dp</dimen>
+    <dimen name="restaurant_details_margin_top">15dp</dimen>
+</resources>
