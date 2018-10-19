@@ -13,6 +13,7 @@ public interface FoursquareService {
             @Query("client_id") String clientId,
             @Query("client_secret") String clientSecret,
             @Query("ll") String latitudeAndLongitude,
-            @Query("v") String version
+            @Query("v") String version,
+            @Query("limit") int limit
     );
 }
