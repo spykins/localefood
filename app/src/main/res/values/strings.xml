@@ -6,6 +6,7 @@
     <string name="system_error">Can\'t respond to your request</string>
     <string name="location_off">Location service is turned off</string>
     <string name="address_format">Address: %1$s  \nCity: %2$s \nState: %3$s \nCountry: %4$s \nPostalCode: %5$s</string>
+    <string name="enter_a_message">Please enter your address</string>
 
 
 </resources>
