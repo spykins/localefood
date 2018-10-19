@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements RestaurantItemCli
         String address = addressText.getText().toString();
         if (address != null && !address.isEmpty()) {
             startServiceToFetchCoordinate(address);
+        } else {
+            notifyUserOfError(getString(R.string.enter_a_message));
         }
     }
 
