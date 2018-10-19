@@ -21,7 +21,8 @@ public class DataFetcher {
                         "M4SLAAABMIU3FEVPQFXH5DJFZPGBS3PNABAYMFZEK2TIZFNL",
                         "T0E2GKXW451OTLLYATJIFYDDWZYLTF4FMO5ZXW3PGIURUFXN",
                             latitude + "," + longitude,
-                        "20181017"
+                        "20181017",
+                        10
                         )
                 .enqueue(new Callback<Restaurant>() {
                     @Override
