@@ -1,4 +1,4 @@
-package com.spykins.localefood;
+package com.spykins.localefood.view;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -11,20 +11,20 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.spykins.localefood.model.Restaurant;
+import com.spykins.localefood.R;
 import com.spykins.localefood.model.Venue;
 import com.spykins.localefood.repository.FetchAddressIntentService;
 import com.spykins.localefood.utils.Constants;
-import com.spykins.localefood.view.RestaurantsListAdapter;
 import com.spykins.localefood.viewmodel.FoodViewModel;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RestaurantItemClicked {
     private FoodViewModel foodViewModel;
     private EditText addressText;
     private RecyclerView recyclerView;
@@ -39,10 +39,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        restaurantsListAdapter = new RestaurantsListAdapter();
+        restaurantsListAdapter = new RestaurantsListAdapter(this);
         recyclerView.setAdapter(restaurantsListAdapter);
-
-
         foodViewModel = ViewModelProviders.of(this).get(FoodViewModel.class);
         subscribe();
     }
@@ -111,4 +109,15 @@ public class MainActivity extends AppCompatActivity {
         startService(intent);
     }
 
+    @Override
+    public void onRestaurantItemClicked(Venue venue) {
+        Log.d("Ywah", venue.toString());
+        Intent intent = new Intent(this, RestaurantDetail.class);
+        intent.putExtra(Constants.INTENT_FOR_NAME, venue.name);
+        String address = getResources().getString(R.string.address_format,
+                venue.location.address, venue.location.city, venue.location.state,
+                venue.location.country, venue.location.postalCode);
+        intent.putExtra(Constants.INTENT_FOR_ADDRESS,  address);
+        startActivity(intent);
+    }
 }
