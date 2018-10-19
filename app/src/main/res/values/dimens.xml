@@ -12,4 +12,10 @@
     <dimen name="restaurant_distance_font_size">14sp</dimen>
     <dimen name="restaurant_address_font_size">16sp</dimen>
     <dimen name="recycler_text_width">330dp</dimen>
+    <dimen name="restaurant_details_width">372dp</dimen>
+    <dimen name="restaurant_details_name_height">89dp</dimen>
+    <dimen name="restaurant_details_address_height">158dp</dimen>
+    <dimen name="restaurant_details_line_space">10dp</dimen>
+    <dimen name="restaurant_address_padding">10dp</dimen>
+    <dimen name="restaurant_details_margin_top">15dp</dimen>
 </resources>
