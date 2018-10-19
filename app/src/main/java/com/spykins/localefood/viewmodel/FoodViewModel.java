@@ -30,7 +30,6 @@ public class FoodViewModel extends AndroidViewModel implements DataFetcherNotifi
     }
 
     public void searchForRestaurant(double longitude, double latitude) {
-        Log.d("FOODVIEW_RESTAURANT", latitude + " : " + longitude);
         dataFetcher.fetchData(latitude, longitude);
     }
 
@@ -38,11 +37,10 @@ public class FoodViewModel extends AndroidViewModel implements DataFetcherNotifi
     @Override
     public void onSuccess(List<Venue> venues) {
         this.venues.postValue(venues);
-        Log.d("FOODVIEW_RESTAURANT", venues.toString());
     }
 
     @Override
     public void onFailure(String message) {
-        Log.d("FOODVIEW_RESTAURANT", message);
+        Log.d("RESTAURANT_ERROR", message);
     }
 }

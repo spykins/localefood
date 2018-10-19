@@ -1,5 +1,6 @@
 package com.spykins.localefood.model;
 
+import com.spykins.localefood.BuildConfig;
 import com.spykins.localefood.repository.http.RetrofitProvider;
 
 import retrofit2.Call;
@@ -16,10 +17,13 @@ public class DataFetcher {
     }
 
     public void fetchData(double latitude, double longitude) {
+        String fourSquareClientId = BuildConfig.FoursquareClientId;
+        String fourSquareClientSecret = BuildConfig.FoursquareClientSecret;
+
         retrofitProvider.provideForsquareService()
                 .restaurantList("4d4b7105d754a06374d81259",
-                        "M4SLAAABMIU3FEVPQFXH5DJFZPGBS3PNABAYMFZEK2TIZFNL",
-                        "T0E2GKXW451OTLLYATJIFYDDWZYLTF4FMO5ZXW3PGIURUFXN",
+                        fourSquareClientId,
+                        fourSquareClientSecret,
                             latitude + "," + longitude,
                         "20181017",
                         10

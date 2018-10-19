@@ -11,7 +11,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -111,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements RestaurantItemCli
 
     @Override
     public void onRestaurantItemClicked(Venue venue) {
-        Log.d("Ywah", venue.toString());
         Intent intent = new Intent(this, RestaurantDetail.class);
         intent.putExtra(Constants.INTENT_FOR_NAME, venue.name);
         String address = getResources().getString(R.string.address_format,
